@@ -1,0 +1,32 @@
+{
+  "name": "push-utils",
+  "version": "0.0.0",
+  "description": "",
+  "main": "build/src/index.js",
+  "scripts": {
+    "clean": "rimraf coverage build tmp",
+    "build": "npm run clean && npm run lint && tsc -p ./tsconfig.release.json",
+    "lint": "tslint -t stylish --type-check --project 'tsconfig.json'",
+    "postinstall": "npm run build",
+    "pretest": "npm run build",
+    "test": "jest --coverage"
+  },
+  "devDependencies": {
+    "@types/jest": "^20.0.6",
+    "@types/node": "^8.0.19",
+    "@types/node-forge": "^0.6.9",
+    "@types/rimraf": "0.0.28",
+    "@types/typescript": "^2.0.0",
+    "jest": "~20.0.0",
+    "nyc": "^8.4.0",
+    "rimraf": "~2.6.1",
+    "tslib": "~1.7.1",
+    "tslint": "~5.5.0",
+    "tslint-microsoft-contrib": "~5.0.1",
+    "tsutils": "~2.7.1",
+    "typescript": "~2.4.2"
+  },
+  "dependencies": {
+    "node-forge": "0.6.42"
+  }
+}
