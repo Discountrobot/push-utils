@@ -1,1 +1,2 @@
 [![Build Status](https://travis-ci.org/Discountrobot/push-utils.svg?branch=master)](https://travis-ci.org/Discountrobot/push-utils)
+[![Coverage Status](https://coveralls.io/repos/github/Discountrobot/push-utils/badge.svg?branch=master)](https://coveralls.io/github/Discountrobot/push-utils?branch=master)
