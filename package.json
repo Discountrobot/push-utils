@@ -25,6 +25,7 @@
     "nyc": "^8.4.0",
     "rimraf": "~2.6.1",
     "standard-version": "^4.2.0",
+    "ts-loader": "^2.3.2",
     "tslib": "~1.7.1",
     "tslint": "~5.5.0",
     "tslint-microsoft-contrib": "~5.0.1",
