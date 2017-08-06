@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <script src="scripts.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+
+      <div class="row">
+        <div class="col">
+        <div class="alert alert-info" role="alert">
+          <span>Upload a .p12 certificate</span>
+          <input type="file" onchange="fileChangeEvent(this.files)">
+        </div>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <div class="col">
+          <label>Private Key</label>
+          <textarea readonly class="form-control" rows="5" id="key"></textarea>
+        </div>
+        <div class="col">
+          <label>Certificate</label>
+          <textarea readonly class="form-control" rows="5" id="cert"></textarea>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <div class="col">
+          <label>Password</label>
+          <input readonly class="form-control" type="text" id="password">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <div class="col">
+          <label>Expires</label>
+          <input readonly type="text" class="form-control" id="expires">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <div class="col">
+          <label>Topic</label>
+          <input readonly type="text" class="form-control" id="topic">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <div class="col">
+          <label>Environment</label>
+          <input readonly type="text" class="form-control" id="environment">
+        </div>
+      </div>
+
+    </div>
+  </body>
+</html>
