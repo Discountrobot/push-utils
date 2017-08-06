@@ -29,7 +29,7 @@ const certificate = new ApnsCertificate(P12_BASE64, passphrase);
 console.log(JSON.stringify(certificate, undefined, 4));
 ```
 
-Which will output
+This will output
 
 ```json
 {
@@ -43,6 +43,9 @@ Which will output
   "expires": "2018-08-05T20:34:44.000Z"
 }
 ```
+
+Which can be used with the [https](https://nodejs.org/docs/latest/api/https.html#https_https_request_options_callback) module
+or more preferably the [node-apn](https://github.com/node-apn/node-apn) library
 
 ### Browser
 
