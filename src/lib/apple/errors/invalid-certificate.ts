@@ -5,7 +5,7 @@
 export class InvalidCertificateError extends Error {
 
   constructor () {
-    super('certificate is invalid');
+    super('unable to parse certificate, certificate is invalid');
     this.name = this.constructor.name;
   }
 
