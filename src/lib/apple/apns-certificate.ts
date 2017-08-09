@@ -84,8 +84,8 @@ export class ApnsCertificate {
     const pkcs8ShroudedKeyBag = keyBags[forge.pki.oids.pkcs8ShroudedKeyBag];
 
     if (
-      pkcs8ShroudedKeyBag === undefined ||
-      pkcs8ShroudedKeyBag[0] === undefined
+      pkcs8ShroudedKeyBag == null ||
+      pkcs8ShroudedKeyBag[0] == null
     ) {
       throw new InvalidPrivateKeyError();
     }
@@ -93,10 +93,10 @@ export class ApnsCertificate {
     const keyBag = pkcs8ShroudedKeyBag[0];
 
     if (
-      keyBag === null ||
-      keyBag.key === null ||
-      keyBag.key.n === null ||
-      keyBag.key.e === null
+      keyBag == null ||
+      keyBag.key == null ||
+      keyBag.key.n == null ||
+      keyBag.key.e == null
     ) {
       throw new InvalidPrivateKeyError();
     }
@@ -138,19 +138,19 @@ export class ApnsCertificate {
     const certBags = bags[forge.pki.oids.certBag];
 
     if (
-      certBags === undefined ||
-      certBags[0] === undefined) {
+      certBags == null ||
+      certBags[0] == null) {
       throw new InvalidCertificateError();
     }
 
     const certBag: forge.pkcs12.Bag = certBags[0];
 
     if (
-      certBag === null ||
-      certBag.cert === undefined ||
-      certBag.cert.publicKey === undefined ||
-      certBag.cert.validity === undefined ||
-      certBag.cert.subject === undefined
+      certBag == null ||
+      certBag.cert == null ||
+      certBag.cert.publicKey == null ||
+      certBag.cert.validity == null ||
+      certBag.cert.subject == null
     ) {
       throw new InvalidCertificateError();
     }
