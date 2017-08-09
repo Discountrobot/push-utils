@@ -52,12 +52,9 @@ test('password protected APNS certificate with correct password', () => {
 });
 
 test('password protected APNS certificate with incorrect password', () => {
-  try {
-    const cert = new ApnsCertificate(readFileAsBase64('apns_password_protected.p12'));
-    expect(cert).toBeUndefined();
-  } catch (err) {
-    expect(err).toBeInstanceOf(InvalidPassphraseError);
-  }
+  expect(() =>
+    new ApnsCertificate(readFileAsBase64('apns_password_protected.p12'))
+  ).toThrowError(InvalidPassphraseError);
 });
 
 test('OpenSSL empty password APNS certificate', () => {
@@ -67,37 +64,25 @@ test('OpenSSL empty password APNS certificate', () => {
 });
 
 test('OpenSSL empty password protected APNS certificate', () => {
-  try {
-    const cert = new ApnsCertificate(readFileAsBase64('openssl_empty_pwd.p12'), '123123123');
-    expect(cert).toBeUndefined();
-  } catch (err) {
-    expect(err).toBeInstanceOf(InvalidPassphraseError);
-  }
+  expect(() =>
+    new ApnsCertificate(readFileAsBase64('openssl_empty_pwd.p12'), '1234')
+  ).toThrowError(InvalidPassphraseError);
 });
 
 test('incorrect (apple but not APNS) certificate', () => {
-  try {
-    const cert = new ApnsCertificate(readFileAsBase64('not_apns_but_apple.p12'));
-    expect(cert).toBeUndefined();
-  } catch (err) {
-    expect(err).toBeInstanceOf(InvalidCertificateEnvError);
-  }
+  expect(() =>
+    new ApnsCertificate(readFileAsBase64('not_apns_but_apple.p12'))
+  ).toThrowError(InvalidCertificateEnvError);
 });
 
 test('incorrect (self signed) certificate', () => {
-  try {
-    const cert = new ApnsCertificate(readFileAsBase64('not_apple.p12'));
-    expect(cert).toBeUndefined();
-  } catch (err) {
-    expect(err).toBeInstanceOf(InvalidPrivateKeyError);
-  }
+  expect(() =>
+    new ApnsCertificate(readFileAsBase64('not_apple.p12'))
+  ).toThrowError(InvalidPrivateKeyError);
 });
 
 test('incorrect file format', () => {
-  try {
-    const cert = new ApnsCertificate(readFileAsBase64('dummy.txt'));
-    expect(cert).toBeUndefined();
-  } catch (err) {
-    expect(err).toBeInstanceOf(InvalidFileError);
-  }
+  expect(() =>
+    new ApnsCertificate(readFileAsBase64('dummy.txt'))
+  ).toThrowError(InvalidFileError);
 });
