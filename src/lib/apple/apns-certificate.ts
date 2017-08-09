@@ -112,11 +112,11 @@ export class ApnsCertificate {
   private getCertEnvironment (cert: IForgeCertificate): IApnsEnvironment {
     const environment = { sandbox: false, production: false };
 
-    if (cert.getExtension({ id: APNS_OIDS.development }) != null) {
+    if (cert.getExtension({ id: APNS_OIDS.SANDBOX }) != null) {
       environment.sandbox = true;
     }
 
-    if (cert.getExtension({ id: APNS_OIDS.production }) != null) {
+    if (cert.getExtension({ id: APNS_OIDS.PRODUCTION }) != null) {
       environment.production = true;
     }
 
