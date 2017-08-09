@@ -159,7 +159,7 @@ export class ApnsCertificate {
     // tslint:disable-next-line: no-unsafe-any
     const topic: string = certBag.cert.subject.attributes[0].value;
     // extracts the certificate validity
-    const expires: Date = new Date(certBag.cert.validity.notAfter.getTime());
+    const expires: Date = certBag.cert.validity.notAfter;
 
     return {
       cert: forge.pki.certificateToPem(certBag.cert),
